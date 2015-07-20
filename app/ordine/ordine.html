@@ -1,0 +1,147 @@
+<div class="innerAll" data-ng-controller="ordineCtr as vm">
+    <h3>Ordine Provinciale di {{ vm.ordine.nome }} <span>| Scheda Recapiti</span></h3>
+
+    <div class="row">
+        <div class="form-actions">
+            <a href="#/ordine" class="btn btn-primary">torna a elenco</a>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <!-- Row -->
+            <div class="row">
+                <!-- Dati Anagrafici-->
+                <div class="col-md-12">
+                    <label>Ordine</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ordine.nome }}
+                    </div>
+                </div>
+                <div class="separator bottom"></div>
+
+                <!-- Dati di Residenza -->
+                <h4 class="col-md-12 separator top">Sede Legale</h4>
+                <div class="col-md-12">
+                    <label>Indirizzo</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ordine.indirizzo }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Provincia</label>
+                    <div class="col-md-12">
+                        {{ vm.ordine.provincia }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Comune</label>
+                    <div class="col-md-12">
+                        {{ vm.ordine.comune }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Cap</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ordine.cap }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Regione</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ordine.regione }}
+                    </div>
+                </div>
+                <div class="separator bottom"></div>
+
+                <!-- Recapiti -->
+                <h4 class="col-md-12 separator top">Recapiti</h4>
+                <div class="col-md-6">
+                    <label>Telafono 1</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ordine.telefono1 }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Telefono 2</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ordine.telefono2 }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Cellulare 1</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ordine.cellulare1 }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Cellulare 2</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ordine.cellulare2 }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Fax</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ordine.fax }}
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label>Email</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ordine.email }}
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label>Pec</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ordine.pec }}
+                    </div>
+                </div>
+
+
+                <!-- Recapiti -->
+                <h4 class="col-md-12 separator top">Contatti digitali</h4>
+                <div class="col-md-6">
+                    <label>Sito Web</label>
+                    <div class="input-group col-sm-12">
+                        <a href="{{ vm.ordine.sitoweb }}" target="_blank">{{ vm.ordine.sitoweb }}</a></div>
+                </div>
+                <div class="col-md-6">
+                    <label>Facebook</label>
+                    <div class="input-group col-sm-12">
+                        <a href="{{ vm.ordine.facebook }}" target="_blank">{{ vm.ordine.facebook }}</a>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Twitter</label>
+                    <div class="input-group col-sm-12">
+                        <a href="{{ vm.ordine.twitter }}" target="_blank">{{ vm.ordine.twitter }}</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Google+</label>
+                    <div class="input-group col-sm-12">
+                        <a href="{{ vm.ordine.googleplus }}" target="_blank">{{ vm.ordine.googleplus }}</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>YouTube</label>
+                    <div class="input-group col-sm-12">
+                        <a href="{{ vm.ordine.youtube }}" target="_blank">{{ vm.ordine.youtube }}</a>
+                    </div>
+                </div>
+            </div>
+            <!-- // Row END -->
+        </div>
+
+        <div class="row">
+            <div class="form-actions" style="margin: 0;">
+                <a href="#/ordine" class="btn btn-primary">torna a elenco</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>

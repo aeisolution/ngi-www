@@ -1,0 +1,167 @@
+<div class="innerAll" data-ng-controller="ingegnereCtr as vm">
+    <h3>Ing.  {{ vm.ingegnere.nome }} {{ vm.ingegnere.cognome }} <span>| Scheda Recapiti</span></h3>
+
+    <div class="row" >
+        <div class="form-actions" style="margin: 0;">
+            <a href="#/ngi/componente" class="btn btn-primary">torna a elenco</a>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <!-- Row -->
+            <div class="row">
+                <!-- Dati Anagrafici-->
+                <div class="col-md-12">
+                    <label>Nome</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ingegnere.nome }}
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label>Cognome</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ingegnere.cognome }}
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label>Codice Fiscale</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ingegnere.codiceFiscale }}
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label>PEC</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ingegnere.pec }}
+                    </div>
+                </div>
+                <div class="separator bottom"></div>
+
+                <!-- Dati di Residenza -->
+                <h4 class="col-md-12 separator top">Ordine Provinciale</h4>
+                <div class="col-md-12">
+                    <label>Ordine</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ingegnere.ordine }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Sezione</label>
+                    <div class="col-md-12">
+                        {{ vm.ingegnere.sezione }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Numero</label>
+                    <div class="col-md-12">
+                        {{ vm.ingegnere.numero }}
+                    </div>
+                </div>
+                <div class="separator bottom"></div>
+
+                <!-- Dati di Residenza -->
+                <h4 class="col-md-12 separator top">Residenza</h4>
+                <div class="col-md-12">
+                    <label>Indirizzo</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ingegnere.resIndirizzo }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Provincia</label>
+                    <div class="col-md-12">
+                        {{ vm.ingegnere.resProvincia }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Comune</label>
+                    <div class="col-md-12">
+                        {{ vm.ingegnere.resComune }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Cap</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ingegnere.resCap }}
+                    </div>
+                </div>
+                <div class="separator bottom"></div>
+
+                <!-- Domicilio Fiscale -->
+                <h4 class="col-md-12 separator top">Ufficio</h4>
+                <div class="col-md-12">
+                    <label>Indirizzo</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ingegnere.domIndirizzo }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Provincia</label>
+                    <div class="col-md-12">
+                        {{ vm.ingegnere.domProvincia }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Comune</label>
+                    <div class="col-md-12">
+                        {{ vm.ingegnere.domComune }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Cap</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ingegnere.domCap }}
+                    </div>
+                </div>
+                <div class="separator bottom"></div>
+
+                <!-- Recapiti -->
+                <h4 class="col-md-12 separator top">Recapiti</h4>
+                <div class="col-md-6">
+                    <label>Telefono 1</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ingegnere.telefono1 }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Telefono 2</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ingegnere.telefono2 }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Cellulare 1</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ingegnere.cellulare1 }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Cellulare 2</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ingegnere.cellulare2 }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label>Fax</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ingegnere.fax }}
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label>Email</label>
+                    <div class="input-group col-sm-12">
+                        {{ vm.ingegnere.email }}
+                    </div>
+                </div>
+                <!-- // Row END -->
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-actions" style="margin: 0;">
+            <a href="#/ngi/componente" class="btn btn-primary">torna a elenco</a>
+        </div>
+    </div>
+</div>

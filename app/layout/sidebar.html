@@ -1,0 +1,46 @@
+<!-- Main Sidebar Menu -->
+<div id="menu" class="hidden-print sidebar-default sidebar-brand-primary">
+
+    <div id="sidebar-social-wrapper">
+        <div id="brandWrapper">
+            <a href="#/dashboard"><img src="/assets/images/ngi_white.png" alt="network Giovani Ing" /> </a>
+        </div>
+        <ul class="menu list-unstyled" id="navigation_current_page">
+            <li class="category">Men&ugrave; di Navigazione</li>
+            <li><a href="#/dashboard"><i class="icon-comment-typing"></i><span>Dashboard</span></a></li>
+            <li class="hasSubmenu">
+                <a data-toggle="collapse" ng-click="NetworkOpen = !NetworkOpen"><i class="icon-group"></i><span>Network</span></a>
+                <ul collapse="NetworkOpen">
+                    <li><a href="#/ngi/componente"><i class="fa fa-group"></i><span>Delegati / Osservatori</span></a></li>
+                    <li><a href="#/ngi/officina"><i class="fa fa-wrench"></i><span>Officine</span></a></li>
+                </ul>
+            </li>
+						<!--
+            <li class="hasSubmenu">
+                <a data-toggle="collapse" ng-click="UtenteOpen = !UtenteOpen"><i class="icon-user-1"></i><span>Area Utente</span></a>
+                <ul collapse="UtenteOpen">
+                    <li><a href="#/profilo/officina"><i class="fa fa-wrench"></i><span>Le mie Officine</span></a></li>
+                    <li><a href="#/profilo/proposta"><i class="fa fa-file-text-o"></i><span>Le mie Proposte</span></a></li>
+                </ul>
+            </li>
+						-->
+            <li class="hasSubmenu">
+                <a data-toggle="collapse" ng-click="InformativaOpen = !InformativaOpen"><i class="icon-information"></i><span>Area informativa</span></a>
+                <ul collapse="InformativaOpen">
+									<!--
+                    <li><a href="#/blog"><i class="fa fa-pencil-square-o"></i><span>Blog</span></a></li>
+									-->
+                    <li><a href="#/proposta"><i class="fa fa-file-text-o"></i><span>Proposte</span></a></li>
+                    <li><a href="#/votazione"><i class="fa fa-check-square-o"></i><span>Votazioni</span></a></li>
+                </ul>
+            </li>
+            <li class="hasSubmenu">
+                <a data-toggle="collapse" ng-click="IstituzioneOpen = !IstituzioneOpen"><i class="icon-manager"></i><span>Area Istituzione</span></a>
+                <ul collapse="IstituzioneOpen">
+                    <li><a href="#/ordine"><i class="fa fa-building-o"></i><span>Ordini Provinciali</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- // Main Sidebar Menu END -->

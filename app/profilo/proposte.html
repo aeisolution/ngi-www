@@ -1,0 +1,54 @@
+﻿<div class="innerAll" data-ng-controller="profiloProposteCtr as vm">
+    <h3>Proposte <span>| elenco proposte utente</span></h3>
+
+    <div class="input-group innerB">
+        <input type="text" class="form-control " placeholder="Cerca..." data-ng-model="vm.filter">
+        <div class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></div>
+    </div>
+
+    <div class="row innerB">
+        <div class="btn-group pull-right">
+            <button class="btn btn-default" data-ng-click="vm.open()"><i class="fa fa-plus"></i> Crea Proposta</button>
+        </div>
+    </div>
+
+    <!-- Widget -->
+    <div class="widget widget-body-white widget-heading-simple">
+        <div class="widget-body">
+            <!-- Table -->
+            <table class="table table-striped table-responsive">
+
+                <!-- Table heading -->
+                <thead class="bg-gray">
+                    <tr>
+                        <th>Titolo</th>
+                        <th class="hidden-xs">Autore</th>
+                        <th class="hidden-md">Descrizione</th>
+                        <th class="hidden-md">PostedOn</th>
+                        <th>Dettaglio</th>
+                    </tr>
+                </thead>
+                <!-- // Table heading END -->
+                <!-- Table body -->
+                <tbody>
+                    <!-- Table row -->
+                    <tr class="gradeX" data-ng-repeat="p in vm.proposte | filter:vm.filter">
+                        <td>{{ p.Titolo }}</td>
+                        <td class="hidden-xs">{{ p.Autore }}</td>
+                        <td class="hidden-md">{{ p.Descrizione}}</td>
+                        <td class="hidden-md">{{ p.PostedOn | date:'dd-MM-yyyy'}}</td>
+                        <td><a href="#/proposta/{{ p.Id}}" class="btn btn-primary">scheda</a></td>
+                    </tr>
+                    <!-- // Table row END -->
+
+                </tbody>
+                <!-- // Table body END -->
+
+            </table>
+            <!-- // Table END -->
+
+
+        </div>
+    </div>
+    <!-- // Widget END -->
+</div>

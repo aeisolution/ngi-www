@@ -1,0 +1,83 @@
+﻿<div class="innerAll" data-ng-controller="blogPostsCtr as vm">
+    <div class="row">
+        <div class="timeline-cover">
+            <div class="widget widget-tabs border-bottom widget-tabs-responsive">
+
+                <div class="widget-body border-bottom">
+                    <div class="media">
+                        <div class="media-body">
+                            <h4><a href="#">network Giovani Ingegneri</a> </h4>
+                            <div class="clearfix"></div>
+                            <p>Blog - sezione informativa aperta a tutti i componenti del network. vm.posts.length {{ vm.posts.length }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //Widget -->
+        </div>
+    </div>
+
+    <div class="innerAll">
+        <div class="border-top border-bottom">
+            <form>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <textarea rows="1" id="postDescrizione" name="postDescrizione" placeholder="inserisci nuovo post... " class="form-control border-none animated" maxlength="3000"></textarea>
+                    </div>
+                    <div class="col-sm-12">
+                        <button type="submit" class="btn btn-primary pull-right">invia</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="gridalicious-row" data-toggle="gridalicious" data-gridalicious-width="340" data-gridalicious-gutter="12" data-gridalicious-selector=".gridalicious-item">
+        <div class="innerAll inner-2x loading text-center text-medium" data-ng-hide="vm.posts.length > 0"><i class="fa fa-fw fa-spinner fa-spin"></i> Loading</div>
+        <div class="loaded" data-ng-class="{hide2: vm.posts.length == 0}"></div>
+
+        <div class="widget gridalicious-item not-responsive" data-ng-repeat="p in vm.posts | orderBy: 'PostedOn' : reverse">
+
+            <!-- Info -->
+            <div class="bg-primary">
+                <div class="media">
+                    <a href="#" class="pull-left"><img src="/assets/images/people/generic50.jpg" width="50" class="media-object"></a>
+                    <div class="media-body innerTB half">
+                        <a href="#" class="pull-right innerT innerR text-white">
+                            <i class="icon-reply-all-fill fa fa-2x "></i>
+                        </a>
+                        <a href="" class="text-white strong display-block">{{ p.Autore }}</a>
+                        <span>on {{ p.PostedOn | date:'dd MMMM yyyy @ hh:mm' }}</span>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="innerAll">
+                <p ng-bind-html="p.Descrizione"></p>
+            </div>
+
+            <!-- Comment -->
+            <div class="bg-gray innerAll border-top border-bottom text-small ">
+                <span>Visualizza <a href="" class="text-primary">{{p.Comments.length}} Commenti</a></span>
+            </div>
+
+            <!-- First Comment -->
+            <div class="media border-bottom margin-none bg-gray" data-ng-repeat="c in p.Comments">
+                <a href="" class="pull-left innerAll"><img src="/assets/images/people/generic50.jpg" width="50" class="media-object"></a>
+                <div class="media-body innerTB">
+                    <a href="#" class="pull-right innerT innerR text-muted"><i class="icon-reply-all-fill fa fa-2x "></i></a>
+                    <a href="" class="strong text-inverse">{{ c.Autore }}</a> 	<small class="text-muted display-block ">on {{ c.PostedOn | date:'dd MMMM yyyy @ hh:mm' }}</small>
+                    <div ng-bind-html="c.Descrizione"></div>
+                </div>
+            </div>
+
+            <div class="border-top">
+                <input type="text" class="form-control border-none" placeholder="Comment here...">
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,12 @@
+﻿<ul data-ng-controller="votazioniSidebarCtr as vm" data-ng-show="vm.votazioni.length>0">
+    <li class="media news-item" data-ng-repeat="p in vm.votazioni">
+        <span class="news-item-success pull-right "><i class="fa fa-circle"></i></span>
+        <span class="pull-left media-object"><i class="fa fa-fw fa-bell"></i></span>
+        <div class="media-body">
+            <a href="#/votazione/{{ p.Id }}" class="text-primary">{{ p.Proposta.Titolo }}</a> <br />pubblicato da <a href="#/ingegnere/{{ p.IdPostedBy }}" class="text-white">{{ p.PostedBy }}</a>
+            <span class="time"><i class="fa fa-fw fa-calendar-o"></i>{{ p.DtInizio | date:'dd-MMM-yy'}} / {{ p.DtFine | date:'dd-MMM-yy'}}</span>
+            <span><i class="fa fa-fw fa-wrench"></i> <a href="#/ngi/officina/{{ p.NgiGruppo.Id }}" class="text-white">{{ p.NgiGruppo.Nome }}</a></span>
+        </div>
+    </li>
+</ul>
+    

@@ -1,0 +1,78 @@
+<div class="innerAll extend_note" data-ng-controller="votazioneCtr as vm">
+    <h3>Votazioni <span>| scheda di voto </span></h3>
+
+    <div class="widget media innerB">
+        <div class="innerAll">
+            <a href="#" class="pull-left bg-info innerAll text-center text-white"><i class="icon-paper-document fa-3x fa fa-fw"></i></a>
+        </div>
+        <div class="media-body innerLR">
+            <div class="innerLR">
+                <h2 class="media-heading margin-none"><span class="text-info">{{ vm.votazione.proposta.titolo }}</span></h2>
+                <p>{{ vm.votazione.proposta.descrizione }}</p>
+                <p class="lead"><i class="icon-wrench fa"></i> {{ vm.votazione.proposta.gruppo.nome }} <i class="icon-user-1 fa"></i> {{ vm.votazione.proposta.gruppo.coordinatore.nominativo }} </p>
+                <p class="lead"><i class="icon-calendar-1 fa"></i> Votazioni dal {{ vm.votazione.dtInizio | date: 'dd-MM-yyyy' }} al {{ vm.votazione.dtFine | date: 'dd-MM-yyyy' }}</p>
+            </div>
+        </div>
+        <div class="widget-head innerLR border-bottom border-top text-center">
+            <div class="media-body">
+                <div><i class="fa fa-paperclip text-info fa-2x"></i> <a href="{{ vm.votazione.proposta.filePath }}" target="_blank" class="strong text-regular"> Leggi Proposta - {{ vm.votazione.proposta.titolo }}</a></div>
+            </div>
+        </div>
+    </div>
+
+	<!-- Voto Delegato -->
+	<div class="alert alert-error" data-ng-if="vm.response=='no-delegato'">
+		<p> La votazione è prevista per un solo Delegato per Ordine Provinciale.</p>
+</div>
+	
+	<!-- Scheda già presente  -->
+	<div class="alert alert-warning" data-ng-if="vm.response=='scheda-presente'">
+		<p> Voto già inviato e registrato da parte del Delegato.</p>
+	</div>
+	
+	<!-- Scheda già presente  -->
+	<div class="alert alert-success" data-ng-if="vm.response=='scheda-registrata'">
+		<p> Scheda di Votazione inviata e registrata correttamente.</p>
+	</div>
+	
+	<!-- Scheda già presente  -->
+	<div class="alert alert-error" data-ng-if="vm.response=='invio-errore'">
+		<p> Errore in fase di registrazione della Scheda di Votazione. Si prega di riprovare, o contattare il webmaster (webmaster@network-giovani.net) per maggiori informazioni.</p>
+	</div>
+	
+
+	<div class="text-center" data-ng-if="vm.ready">
+        <div class="innerAll">
+            <button class="btn btn-stroke btn-primary btn-icon-stacked text-center" data-ng-click="vm.setFavorevole()" data-ng-class="{'btn-stroke': vm.voto!==1}" style="width:200px">
+                <i class="fa fa-2x fa-thumbs-o-up"></i> <b>FAVOREVOLE <br />&nbsp;</b>
+            </button>
+            <button class="btn btn-stroke btn-danger btn-icon-stacked text-center" data-ng-click="vm.setContrario()" data-ng-class="{'btn-stroke': vm.voto!==2}" style="width: 200px">
+                <i class="fa fa-2x fa-thumbs-o-down"></i> <b>CONTRARIO<br />&nbsp;</b>
+            </button>
+        </div>
+        <div class="innerAll text-center">
+            <div>
+                <label for="textDescription">eventuali note per parere Contrario: </label>
+                <textarea data-ng-disabled="vm.voto!=2" class="notebook form-control" rows="4" data-ng-model="vm.note"></textarea>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <div class="pull-left">
+            <a href="#/votazione" class="btn btn-default"><i class="fa fa-fw fa-arrow-left"></i> torna a elenco</a>
+        </div>
+        <!--
+        <div class="pull-left innerL">
+            <a href="javascript:;" class="btn btn-default"><i class="fa fa-fw icon-paperclip"></i> info votazione</a>
+        </div>
+        -->
+        <span data-ng-show="vm.invio" class="label label-info"><i class="glyphicon glyphicon-lock">invio votazione...</i></span>
+        <button class="pull-right btn btn-primary" data-ng-click="vm.sendVoto()" data-ng-if="vm.ready" data-ng-disabled="vm.voto==0 || vm.inviato">
+			<i class="fa fa-fw icon-outbox-fill"></i> Invia Voto
+		</button>
+        <div class="clearfix"></div>
+    </div>
+
+</div>

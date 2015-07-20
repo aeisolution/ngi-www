@@ -1,0 +1,54 @@
+<div class="innerAll" data-ng-controller="votazioniCtr as vm">
+    <h3>Votazioni <span>| elenco proposte in votazione</span></h3>
+
+    <div class="input-group innerB">
+        <input type="text" class="form-control " placeholder="Cerca..." data-ng-model="vm.filter">
+        <div class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></div>
+    </div>
+
+    <!-- Widget -->
+    <div class="widget widget-body-white widget-heading-simple">
+        <div class="widget-body">
+            <!-- Table -->
+            <table class="table table-striped table-responsive">
+
+                <!-- Table heading -->
+                <thead class="bg-gray">
+                    <tr>
+                        <th>Titolo</th>
+                        <th class="hidden-xs">Officina</th>
+                        <th class="hidden-md">Descrizione</th>
+                        <th class="hidden-md">Periodo Voto</th>
+                        <th class="hidden-xs">Voti Registrati</th>
+                        <th>Dettaglio</th>
+                    </tr>
+                </thead>
+                <!-- // Table heading END -->
+                <!-- Table body -->
+                <tbody>
+                    <!-- Table row -->
+                    <tr class="gradeX" data-ng-repeat="v in vm.votazioni | filter:vm.filter">
+                        <td>{{ v.proposta.titolo }}</td>
+                        <td class="hidden-xs">{{ v.proposta.gruppo.nome}}</td>
+                        <td class="hidden-md">{{ v.proposta.descrizione | limitTo: 150}}</td>
+                        <td class="hidden-md">{{ v.dtInizio | date:'dd-MM-yyyy'}} <br/> {{ v.dtFine | date:'dd-MM-yyyy'}}</td>
+                        <td class="hidden-xs">{{ v.totSchede || 0 }} </td>
+                        <td>
+													<span data-ng-if="!v.completed && !v.open" class="label label-default">non attiva</span>
+													<a data-ng-if="!v.completed && v.open" href="#/votazione/{{ v._id}}" class="btn btn-primary">scheda</a> 
+														<a data-ng-if="v.completed" href="#/votazione/result/{{ v._id}}" class="btn btn-default">risultati</a>
+													</td>
+                    </tr>
+                    <!-- // Table row END -->
+
+                </tbody>
+                <!-- // Table body END -->
+
+            </table>
+            <!-- // Table END -->
+
+
+        </div>
+    </div>
+    <!-- // Widget END -->
+</div>

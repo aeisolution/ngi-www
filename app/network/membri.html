@@ -1,0 +1,39 @@
+<div class="innerAll" data-ng-controller="membriCtr as vm">
+    <h3>network Giovani <span>| elenco delegati e osservatori</span></h3>
+
+    <div class="input-group innerB">
+        <input type="text" class="form-control " placeholder="Cerca..." data-ng-model="vm.filter">
+        <div class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></div>
+    </div>
+
+    <!-- Widget -->
+    <div class="row row-merge">
+        <div class="col-sm-12 col-md-6 col-lg-4 bg-white border-bottom" data-ng-repeat="m in vm.membri | filter:vm.filter | orderBy: 'cognome' ">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="media">
+                        <a class="pull-left margin-none" href="#">
+                            <img class="img-clean" src="/assets/images/people/generic.jpg" alt="...">
+                        </a>
+                        <div class="media-body innerAll padding-right-none padding-bottom-none">
+                            <h4 class="media-heading"><a href="#/ingegnere/{{ m._id }}" class="text-inverse">{{ m.cognome | uppercase }} {{ m.nome | uppercase }}</a></h4>
+                            <p>
+                                <i class="fa fa-fw fa-map-marker text-muted"></i>{{ m.ordine }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="innerAll text-right">
+                        <div class="btn-group-vertical btn-group-sm">
+                            <span class="btn btn-primary">{{ m.ruolo }}</span>
+                            <a href="" class="btn btn-default">{{ m.numero }}/{{ m.sezione }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- // Widget END -->
+</div>

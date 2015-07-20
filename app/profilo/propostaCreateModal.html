@@ -1,0 +1,24 @@
+﻿<div class="modal-header">
+    <button type="button" class="close" ng-click="cancel()"><i class="fa fa-times"></i></button>
+    <h4 class="modal-title"><i class="fa fa-chevron-right"></i> Nuova Proposta - {{ proposta.Titolo }} </h4>
+</div>
+<div class="modal-body">
+    <form name="modalForm" novalidate>
+        <div class="fields-group">
+            <label for="cognome">Nome</label>
+            <input type="text" class="form-control" name="titolo" data-ng-model="proposta.Titolo" required />
+            <small class="ng-message" data-toggle="tooltip" data-placement="top" title=""
+                   ng-messages="modalForm.titolo.$error" ng-messages-include="/app/common/messages.html"></small>
+        </div>
+        <div class="fields-group">
+            <label for="nome">Descrizione</label>
+            <textarea rows="5" class="form-control" name="descrizione" data-ng-model="proposta.Descrizione" required />
+            <small class="ng-message" ng-messages="modalForm.descrizione.$error" 
+                   ng-messages-include="/app/common/messages.html"></small>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="cancel()">Annulla</button>
+    <button class="btn btn-primary btn-stroke" ng-click="ok()">Salva</button>
+</div>

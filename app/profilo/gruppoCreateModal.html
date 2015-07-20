@@ -1,0 +1,24 @@
+﻿<div class="modal-header">
+    <button type="button" class="close" ng-click="cancel()"><i class="fa fa-times"></i></button>
+    <h4 class="modal-title"><i class="fa fa-chevron-right"></i> Nuova Officina - {{ gruppo.Nome }} </h4>
+</div>
+<div class="modal-body">
+    <form name="modalForm" novalidate>
+        <div class="fields-group" ng-class="{ 'required' : modalForm.nome.$invalid && !modalForm.nome.$pristine }">
+            <label for="cognome">Nome</label>
+            <input type="text" class="form-control" name="nome" data-ng-model="gruppo.Nome" required />
+            <small class="ng-message" data-toggle="tooltip" data-placement="top" title="" 
+                   ng-messages="modalForm.nome.$error" ng-messages-include="/app/common/messages.html"></small>
+        </div>
+        <div class="fields-group" ng-class="{ 'required' : modalForm.descrizione.$invalid && !modalForm.descrizione.$pristine }">
+            <label for="nome">Descrizione</label>
+            <textarea rows="5" class="form-control" name="descrizione" data-ng-model="gruppo.Descrizione" required />
+            <small class="ng-message" ng-messages="modalForm.descrizione.$error" 
+                   ng-messages-include="/app/common/messages.html"></small>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="cancel()">Annulla</button>
+    <button class="btn btn-primary btn-stroke" ng-click="ok()">Salva</button>
+</div>

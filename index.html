@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="sidebar sidebar-social footer-sticky" ng-app="app">
+
+<head>
+  <title>network Giovani Ingegneri</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+    <link rel="stylesheet" href="assets/css/admin/module.admin.stylesheet-complete.min.css" />
+    <link rel="stylesheet" href="css/toastr.min.css" />
+	
+
+</head>
+
+<body class="menu-right-hidden">
+
+	<div id="container" class="container-fluid"  ng-controller="shell as vm">
+	<div ng-if="vm.isLogged" ng-include="'app/layout/sidebar.html'"></div>
+
+		<!-- Content -->
+		<div ng-class="{contentMain: vm.isLogged}">
+			<div ng-if="vm.isLogged" ng-include="'app/layout/navbar.html'"></div>
+			
+			<div ng-view></div>
+		</div> <!-- // Content END -->
+
+	<div class="clearfix"></div>
+</div>	
+	
+	<!-- Scripts - old version -->
+	<script src="scripts/jquery-1.10.2.min.js"></script>
+	<script src="scripts/bootstrap.min.js"></script>
+	
+	<!--
+	<script src="assets/components/plugins/nicescroll/jquery.nicescroll.min.js"></script>
+	-->
+
+	<script>
+			$(document).ready(function () {
+					$(".btn-open-left").click(function () {
+							$("#container").toggleClass("menu-hidden");
+					});
+
+					//$("#sidebar-social-wrapper").niceScroll();
+			});
+	</script>
+	
+	<!-- NGI web site -->
+    <!-- SCRIPTS -->
+    <script src="/scripts/jquery-1.10.2.js"></script>
+    <script src="/scripts/bootstrap.min.js"></script>
+    <script src="/scripts/toastr.js"></script>
+    <script src="/scripts/Chart.js"></script>
+
+		<!--
+		<script src="/scripts/jquery.slimscroll.js"></script>
+    <script src="/scripts/lodash.min.js"></script>
+    <script src="/scripts/moment.js"></script>
+    <script src="/scripts/spin.js"></script>
+    <script src="/scripts/jquery.grid-a-licious.min.js"></script>
+    -->
+
+    <!-- ANGULAR -->
+    <script src="/scripts/angular.min.js"></script>
+    <script src="/scripts/angular-route.min.js"></script>
+    <script src="/scripts/angular-animate.min.js"></script>
+    <script src="/scripts/angular-sanitize.min.js"></script>
+    <script src="/scripts/angular-messages.min.js"></script>
+
+
+    <script src="/scripts/ui-bootstrap-tpls-0.10.0.js"></script>
+    <script src="/scripts/ng-infinite-scroll.min.js"></script>
+    <script src="/scripts/angular-chart.js"></script>
+	
+		<!-- Bootstrapping -->
+    <script src="/app/app.js"></script>
+    <script src="/app/config.js"></script>
+    <script src="/app/config.route.js"></script>
+	
+
+		<!-- services -->
+		<script src="/app/common/logger.js"></script>
+		<script src="app/services/factory.js"></script>
+  	
+		<script src="app/auth/auth.factory.js"></script>
+  	<script src="app/auth/auth.controller.js"></script>	
+	
+	
+    <!-- app -->
+		<script src="/app/account/cambioPassword.js"></script>
+		<script src="/app/account/pwdDimenticata.js"></script>
+		<script src="/app/account/reset.js"></script>
+	
+		<script src="/app/network/membri.js"></script>
+		<script src="/app/ingegnere/ingegnere.js"></script>
+	
+    <script src="/app/network/gruppi.js"></script>
+    <script src="/app/network/gruppo.js"></script>
+
+    <script src="/app/ordine/ordini.js"></script>
+		<script src="/app/ordine/ordine.js"></script>
+
+    <script src="/app/profilo/utente.js"></script>
+	
+    <script src="/app/proposta/proposte.js"></script>
+    <script src="/app/proposta/proposta.js"></script>
+
+    <script src="/app/votazione/votazioni.js"></script>
+    <script src="/app/votazione/votazione.js"></script>
+    <script src="/app/votazione/result.js"></script>
+	
+    <!-- Profilo -->
+		
+	
+    <script src="/app/layout/shell.js"></script>
+	
+</body>
+
+</html>

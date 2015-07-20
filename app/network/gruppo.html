@@ -1,0 +1,60 @@
+<div class="innerAll" data-ng-controller="gruppoCtr as vm">
+    <h3>Officina <span>| Scheda componenti</span></h3>
+
+    <div class="widget media innerB">
+        <div class="innerAll">
+            <a href="#" class="pull-left bg-primary innerAll text-center text-white"><i class="icon-wrench fa-3x fa fa-fw"></i></a>
+        </div>
+        <div class="media-body innerLR">
+            <div class="innerLR">
+                <h2 class="media-heading margin-none"><span class="text-inverse">{{ vm.gruppo.nome }}</span></h2>
+                <p>{{ vm.gruppo.descrizione }}</p>
+                <p class="lead">by {{ vm.gruppo.coordinatore.nominativo }} on {{ vm.gruppo.dtInsert | date: 'dd-MM-yyyy' }}</p>
+            </div>
+        </div>
+        <!-- End Media -->
+    </div>
+
+    <div class="widget widget-body-white widget-heading-simple">
+        <div class="widget-body">
+
+            <!-- Table -->
+            <table class="table table-striped table-hover table-responsive">
+
+                <!-- Table heading -->
+                <thead class="bg-gray">
+                    <tr>
+                        <th>Componente</th>
+                        <th>Ordine</th>
+                        <th>Registrato il</th>
+                    </tr>
+                </thead>
+                <!-- // Table heading END -->
+                <!-- Table body -->
+                <tbody>
+                    <!-- Table row COORDINATORE-->
+                    <tr class="gradeX">
+                        <td>{{ vm.gruppo.coordinatore.nominativo | uppercase }} <span class="label label-info">coordinatore</span></td>
+                        <td>{{ vm.gruppo.coordinatore.ordine }}</td>
+                        <td>{{ vm.gruppo.dtInsert | date:'dd-MM-yyyy' }}</td>
+                    </tr>
+                    <!-- // Table row END -->
+                    <!-- Table row -->
+                    <tr class="gradeX" data-ng-repeat="m in vm.gruppo.membri | orderBy: 'nominativo' ">
+                        <td>{{ m.nominativo | uppercase }}</td>
+                        <td>{{ m.ordine }}</td>
+                        <td>{{ m.dtInsert | date:'dd-MM-yyyy' }}</td>
+                    </tr>
+                    <!-- // Table row END -->
+
+                </tbody>
+                <!-- // Table body END -->
+
+            </table>
+            <!-- // Table END -->
+
+
+        </div>
+    </div>
+
+</div>

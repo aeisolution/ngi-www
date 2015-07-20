@@ -1,0 +1,39 @@
+<div class="innerAll extend_note" data-ng-controller="propostaCtr as vm">
+    <h3>Proposta  <span>| Scheda di dettaglio</span></h3>
+
+    <div class="widget media innerB">
+        <div class="innerAll">
+            <a href="#" class="pull-left bg-primary innerAll text-center text-white"><i class="icon-paper-document fa-5x fa fa-fw"></i></a>
+        </div>
+        <div class="media-body innerLR">
+            <div class="innerLR">
+                <h2 class="media-heading margin-none"><span class="text-inverse">{{ vm.proposta.titolo }}</span></h2>
+                <p>{{ vm.proposta.descrizione }}</p>
+                <p class="lead">{{ vm.proposta.gruppo.nome }} coordinata da {{ vm.proposta.gruppo.coordinatore.nominativo }} pubblicata il {{ vm.proposta.dtInsert | date: 'dd-MM-yyyy' }}</p>
+            </div>
+        </div>
+        <!-- End Media -->
+    </div>
+
+    <div class="widget">
+        <div class="widget-head">
+            <h4 class=" heading  pull-left margin-none border-bottom">Allegati</h4>
+            <i class="fa fa-crop pull-right text-primary innerT half"></i>
+            <div class="clearfix"></div>
+        </div>
+        <div class="widget-body padding-none">
+            <div class="innerLR innerT half border-top">
+                <div class="media inline-block margin-none">
+                    <div class="innerLR">
+                        <i class="fa fa-paperclip pull-left text-primary fa-2x"></i>
+                        <div class="media-body">
+                            <div><a href="{{ vm.proposta.filePath }}" target="_blank" class="strong text-regular">Proposta - {{ vm.proposta.titolo }} </a></div>
+                            
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

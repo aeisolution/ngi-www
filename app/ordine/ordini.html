@@ -1,0 +1,51 @@
+<div class="innerAll" data-ng-controller="ordiniCtr as vm">
+    <h3>Ordini Provinciali <span>| elenco recapiti</span></h3>
+
+    <div class="input-group innerB">
+        <input type="text" class="form-control " placeholder="Cerca..." data-ng-model="vm.filter">
+        <div class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></div>
+    </div>
+
+
+    <!-- Widget -->
+    <div class="widget widget-body-white widget-heading-simple">
+        <div class="widget-body">
+            
+            
+            <!-- Table -->
+            <table class="table table-striped table-responsive">
+
+                <!-- Table heading -->
+                <thead class="bg-gray">
+                    <tr>
+                        <th>Nome</th>
+                        <th class="hidden-xs">Regione</th>
+                        <th class="hidden-md">Telefono</th>
+                        <th class="hidden-md">Pec</th>
+                        <th>Dettaglio</th>
+                    </tr>
+                </thead>
+                <!-- // Table heading END -->
+                <!-- Table body -->
+                <tbody>
+                    <!-- Table row -->
+                    <tr class="gradeX" data-ng-repeat="o in vm.ordini | filter:vm.filter">
+                        <td>{{ o.nome }}</td>
+                        <td class="hidden-xs">{{ o.regione }}</td>
+                        <td class="hidden-md">{{ o.telefono1 }}</td>
+                        <td class="hidden-md">{{ o.pec }}</td>
+                        <td><a href="#/ordine/{{ o._id}}" class="btn btn-primary">scheda</a></td>
+                    </tr>
+                    <!-- // Table row END -->
+
+                </tbody>
+                <!-- // Table body END -->
+
+            </table>
+            <!-- // Table END -->
+
+
+        </div>
+    </div>
+    <!-- // Widget END -->
+</div>
